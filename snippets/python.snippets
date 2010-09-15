@@ -1,3 +1,13 @@
+
+# list comprehension
+snippet ls
+	[${1} for ${2:needle} in ${3:haystack}]${4}
+
+# dict comprehension
+snippet di
+	{${1} for ${2:needle}, ${3:innocence} in ${4:haystack}}${5}
+
+# ---------- OLD -------
 snippet #!
 	#!/usr/bin/env python
 
@@ -38,12 +48,15 @@ snippet defs
 		${3:pass}
 # New Property
 snippet property
-	def ${1:foo}():
-		doc = "${2:The $1 property.}"
-		def fget(self):
-			${3:return self._$1}
-		def fset(self, value):
-			${4:self._$1 = value}
+	@property
+	def ${1:foo}(self):
+		return ${2:self.value}
+
+	@$1.setter
+	def $1(self, value):
+		$2 = value
+	${3}
+
 # Lambda
 snippet ld
 	${1:var} = lambda ${2:vars} : ${3:action}

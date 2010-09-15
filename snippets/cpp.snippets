@@ -1,5 +1,22 @@
 # Added C++0x Features :)
 
+snippet oncepp
+	#ifndef ${1:`toupper(Filename('$1_HPP', 'UNTITLED_HPP'))`}
+	#define $1
+
+	${2}
+
+	#endif /* $1 */
+
+# const reference parameter
+snippet ref
+	const ${1:int}& ${2:value}
+
+# const move parameter
+snippet mov
+	const ${1:int}&& ${2:value}
+
+
 # delete member statement
 snippet rm
 	= delete${1}
@@ -37,14 +54,14 @@ snippet newfunc
 
 # new method syntax
 snippet newmeth
-	auto ${1: `Filename('', 'class')`}::${3:method_name}(${4: void}) -> ${5: int}
+	auto ${1: `Filename('', 'class')`}::${3:method_name}(${4:void}) -> ${5:int}
 	{
 		${6:/* code */}
 	}
 
 # method
 snippet method
-	${1: void} ${2: `Filename('', 'class)`}::${3:method_name}(${4: void})
+	${1:void} ${2:`Filename('', 'class)`}::${3:method_name}(${4:void})
 	{
 		${5:/* code */}
 	}
@@ -59,20 +76,20 @@ snippet lamval
 
 # empty lambda
 snippet lambda
-	[](${1}) -> ${2} { return ${3: /* code */}; }${4};
+	[](${1}) -> ${2} { return ${3:/* code */}; }${4};
 
 # range based for loop
 snippet forr
 	for (${1:auto&} ${2:x} : ${3:container})
 	{
-		${4: /* code */}
+		${4:/* code */}
 	}
 
 # enum class
 snippet ecl
-	enum class ${1: enumeration}
+	enum class ${1:enumeration}
 	{
-		${2: /* data */}
+		${2:/* data */}
 	};
 
 # ----------- Old ---------------
