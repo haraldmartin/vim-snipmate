@@ -110,10 +110,10 @@ snippet cl
 	class ${1:`Filename('$1_t', 'name')`} 
 	{
 		public:
-			explicit $1 (${2:arguments});
-			explicit $1	(const $1& copy);
-			explicit $1 (const $1&& move);
-			virtual ~$1 (void);
+			explicit $1(${2:arguments});
+			explicit $1(const $1& copy);
+			explicit $1(const $1&& move);
+			virtual ~$1(void);
 
 		private:
 			${3:/* data */}
