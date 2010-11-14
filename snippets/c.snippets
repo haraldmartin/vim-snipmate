@@ -1,3 +1,13 @@
+# Blocks For clang runtime
+
+snippet bltype
+	typedef ${1:void}(^${2:name})(${3:void});
+
+snippet block
+	^(${1:void}){
+		${2:/* code here */}
+	}
+
 # sizeof
 snippet sz
 	sizeof(${1: int})

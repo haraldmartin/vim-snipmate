@@ -1,8 +1,6 @@
 snippet cmake
-	CMAKE_MINIMUM_REQUIRED(VERSION 2.6)
-	PROJECT(${1:ProjectName})
-
-	FIND_PACKAGE(${2:LIBRARY})
+	cmake_minimum_required(VERSION 2.8)
+	project(${1:ProjectName})
 
 	INCLUDE_DIRECTORIES(
 		${$2_INCLUDE_DIR}
